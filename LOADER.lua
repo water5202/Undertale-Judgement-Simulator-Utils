@@ -6,6 +6,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local Players = game:GetService("Players")
 local currentplayer
 local hp
+local maxhp
 
 Fluent:Notify({
         Title = "UJS [Interface]",
