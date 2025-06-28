@@ -84,13 +84,9 @@ Tabs.Utils:AddButton({
   local BypassShopInteract = Tabs.Utils:AddToggle("Instant Shop", {Title = "Instant Shop Interaction", Default = false })
 
 BypassShopInteract:OnChanged(function(Value)
-    for _, child in ipairs(workspace.Lobby:GetChildren()) do
-        if child:FindFirstChild("ProximityPrompt") then
-            if Value == true then
-                child.ProximityPrompt.HoldDuration = 0
-            else
-                child.ProximityPrompt.HoldDuration = 0.5
-            end
-        end
-    end
+if Value == true then
+workspace.Lobby:GetChildren()[90].h.ProximityPrompt.HoldDuration = 0
+                else
+workspace.Lobby:GetChildren()[90].h.ProximityPrompt.HoldDuration = 0.5
+end
 end)
