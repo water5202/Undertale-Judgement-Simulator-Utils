@@ -34,7 +34,7 @@ currentplayer = #Players:GetPlayers()
 CurrentPlayers:SetTitle(currentplayer .. " │ players")
 end)
 
-local lobbytp = Tabs.Utils:AddButton({
+Tabs.Utils:AddButton({
     Title = "Lobby TP",
     Description = "Lobby Teleport",
     Callback = function()
@@ -80,3 +80,17 @@ local lobbytp = Tabs.Utils:AddButton({
         })
     end
 })
+
+  local BypassShopInteract = Tabs.Utils:AddToggle("Instant Shop", {Title = "Instant Shop Interaction", Default = false })
+
+BypassShopInteract:OnChanged(function()
+if Value == true then
+workspace.Lobby:GetChildren().h.ProximityPrompt.HoldDuration = 0
+end
+
+if Value == false then
+workspace.Lobby:GetChildren().h.ProximityPrompt.HoldDuration = 0.5
+end
+end)
+
+    Options.MyToggle:SetValue(false)
