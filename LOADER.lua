@@ -231,6 +231,8 @@ game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Balance.heya.Te
 end
 end)
 
+game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Items.Error404.Name
+
 local HideHP = Tabs.Visuals:AddToggle("Hides Health bar", {Title = "Hide Health Bar", Default = nil })
 
 HideHP:OnChanged(function(Value)
@@ -241,3 +243,12 @@ game:GetService("Players").LocalPlayer.PlayerGui.BetterHealthBar.HealthGui.Visib
 end
 end)
 
+local HideHP = Tabs.Visuals:AddToggle("Shows the Errored Out text", {Title = "Error 404 Price (Item)", Default = nil })
+
+HideHP:OnChanged(function(Value)
+if Value == true then
+game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Items.Error404.Name.Text = "Error 404 [6666G]"
+		else
+game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Items.Error404.Name.Text = "$#@!%_ - %$#%"
+end
+end)
