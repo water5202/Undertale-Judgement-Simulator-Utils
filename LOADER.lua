@@ -231,7 +231,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Balance.heya.Te
 end
 end)
 
-local HideHP = Tabs.Utils:AddToggle("Hides Health bar", {Title = "Hide Health Bar", Default = nil })
+local HideHP = Tabs.Visuals:AddToggle("Hides Health bar", {Title = "Hide Health Bar", Default = nil })
 
 HideHP:OnChanged(function(Value)
 if Value == true then
