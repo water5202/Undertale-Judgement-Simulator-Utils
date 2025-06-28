@@ -16,7 +16,7 @@ Fluent:Notify({
 local Window = Fluent:CreateWindow({
     Title = "UJS [Water's Utils] │ " .. identifyexecutor(),
     TabWidth = 160,
-    Size = UDim2.fromOffset(580, 460),
+    Size = UDim2.fromOffset(580, 360),
     Acrylic = true,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.P
