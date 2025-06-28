@@ -31,7 +31,7 @@ local CurrentPlayers = Tabs.Utils:AddParagraph({
 
 spawn(function()
 currentplayer = #Players:GetPlayers()
-CurrentPlayers:SetTitle(currentplayer .. " │ players")
+CurrentPlayers:SetTitle(currentplayer .. " │ Players")
 end)
 
 Tabs.Utils:AddButton({
