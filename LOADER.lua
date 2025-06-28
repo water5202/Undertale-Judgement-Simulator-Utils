@@ -34,18 +34,18 @@ currentplayer = #Players:GetPlayers()
 CurrentPlayers:SetTitle(currentplayer .. " │ players")
 end)
 
-    Tabs.Main:AddButton({
-        Title = "Goto Lobby",
+local lobbytp = Tabs.Utils:AddButton({
+        Title = "Lobby TP",
         Description = "Lobby Teleport",
         Callback = function()
             Window:Dialog({
                 Title = "Teleport to Lobby?",
-                Content = "This is a dialog",
+                Content = nil,
                 Buttons = {
                     {
                         Title = "Confirm",
                         Callback = function()
-                            print("Confirmed the dialog.")
+                                                                
                         end
                     },
                     {
