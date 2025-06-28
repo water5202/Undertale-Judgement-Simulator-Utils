@@ -35,13 +35,12 @@ Window:SelectTab(1)
                     {
                         Title = "Confirm",
                         Callback = function()
-                            print("Confirmed the dialog.")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
                         end
                     },
                     {
                         Title = "Cancel",
                         Callback = function()
-                            print("Cancelled the dialog.")
                         end
                     }
                 }
