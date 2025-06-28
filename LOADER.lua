@@ -85,7 +85,7 @@ local Gold = Tabs.Utils:AddParagraph({
 spawn(function()
 while true do
 g = game:GetService("Players").LocalPlayer.leaderstats.G.Value
-Gold:SetTitle(g)
+Gold:SetTitle(g .. "G")
 task.wait(0.7)
 end
 end)
@@ -93,7 +93,7 @@ end)
 spawn(function()
 while true do
 ws = game:GetService("Players").LocalPlayer.leaderstats.Wins.Value
-Wins:SetTitle(ws)
+Wins:SetTitle(ws .. "Wins")
 task.wait(0.7)
 end
 end)
