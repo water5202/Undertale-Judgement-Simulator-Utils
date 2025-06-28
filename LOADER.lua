@@ -221,8 +221,13 @@ local ToggleShop = Tabs.Utils:AddToggle("Instant Shop1", {Title = "Show Shop", D
 ToggleShop:OnChanged(function(Value)
 if Value == true then
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Visible = true
+while Value == true do
+game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Balance.heya.Text = g
+task.wait(0.1)
+end
 else
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Visible = false
+game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Balance.heya.Text = 0
 end
 end)
 
