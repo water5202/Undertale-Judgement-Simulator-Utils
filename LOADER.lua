@@ -81,7 +81,7 @@ Tabs.Utils:AddButton({
     end
 })
 
-  local BypassShopInteract = Tabs.Utils:AddToggle("Instant Shop", {Title = "Instant Shop Interaction", Default = false })
+local BypassShopInteract = Tabs.Utils:AddToggle("Instant Shop", {Title = "Instant Shop Interaction", Default = false })
 
 BypassShopInteract:OnChanged(function(Value)
 if Value == true then
@@ -90,3 +90,27 @@ workspace.Lobby:GetChildren()[90].h.ProximityPrompt.HoldDuration = 0
 workspace.Lobby:GetChildren()[90].h.ProximityPrompt.HoldDuration = 0.5
 end
 end)
+
+    Tabs.Utils:AddButton({
+        Title = "Reset",
+        Description = "Sets Health to 0",
+        Callback = function()
+            Window:Dialog({
+                Title = "Reset Character?",
+                Content = nil,
+                Buttons = {
+                    {
+                        Title = "Confirm",
+                        Callback = function()
+                            game.Players.LocalPlayer.Character.Humanoid.Health = 0
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                        end
+                    }
+                }
+            })
+        end
+    })
