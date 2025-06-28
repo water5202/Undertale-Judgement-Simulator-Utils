@@ -93,7 +93,7 @@ end)
 spawn(function()
 while true do
 ws = game:GetService("Players").LocalPlayer.leaderstats.Wins.Value
-Wins:SetTitle(ws .. "Wins")
+Wins:SetTitle(ws .. " Wins")
 task.wait(0.7)
 end
 end)
