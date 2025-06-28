@@ -5,6 +5,7 @@ end
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local Players = game:GetService("Players")
 local currentplayer
+local hp
 
 Fluent:Notify({
         Title = "UJS [Interface]",
@@ -52,14 +53,26 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/
         end
     })
 
+local Health = Tabs.Utils:AddParagraph({
+        Title = "",
+        Content = ""
+})
+
 local CurrentPlayers = Tabs.Utils:AddParagraph({
         Title = "",
         Content = ""
 })
 
 spawn(function()
+hp = game.Players.LocalPlayer.Character.Humanoid.Health
+maxhp = game.Players.LocalPlayer.Character.Humanoid.MaxHealth
+Health:SetTitle(hp .. "│" .. maxhp)
+end)
+
+spawn(function()
 currentplayer = #Players:GetPlayers()
 CurrentPlayers:SetTitle(currentplayer .. " │ Players")
+task.wait(0.7)
 end)
 
 Tabs.Utils:AddButton({
