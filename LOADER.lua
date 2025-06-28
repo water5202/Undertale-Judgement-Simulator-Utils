@@ -81,7 +81,7 @@ Tabs.Utils:AddButton({
     end
 })
 
-local BypassShopInteract = Tabs.Utils:AddToggle("Instant Shop", {Title = "Instant Shop Interaction", Default = false })
+local BypassShopInteract = Tabs.Utils:AddToggle("Instant Shop", {Title = "Instant Shop Interaction", Default = nil })
 
 BypassShopInteract:OnChanged(function(Value)
 if Value == true then
