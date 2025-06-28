@@ -7,6 +7,7 @@ local Players = game:GetService("Players")
 local currentplayer
 local hp
 local maxhp
+local dc
 
 Fluent:Notify({
         Title = "UJS [Interface]",
@@ -63,6 +64,19 @@ local CurrentPlayers = Tabs.Utils:AddParagraph({
         Title = "",
         Content = ""
 })
+
+local DodgeCount = Tabs.Utils:AddParagraph({
+        Title = "",
+        Content = ""
+})
+
+spawn(function()
+while true do
+dc = game:GetService("Players").LocalPlayer.PlayerGui.Main.Frame.DodgeCounter.Text
+DodgeCount:SetTitle(dc)
+task.wait(0.7)
+end
+end)
 
 spawn(function()
 while true do
