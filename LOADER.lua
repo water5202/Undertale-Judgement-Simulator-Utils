@@ -15,3 +15,8 @@ local Window = Fluent:CreateWindow({
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.Quote
 })
+
+local Tabs = {
+    Utils = Window:AddTab({ Title = "Utilites", Icon = "hammer" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+}
