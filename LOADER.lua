@@ -24,6 +24,31 @@ local Tabs = {
 }
 Window:SelectTab(1)
 
+    Tabs.Settings:AddButton({
+        Title = "Infinite Yield",
+        Description = "Loads Infinite Yield for debugging",
+        Callback = function()
+            Window:Dialog({
+                Title = "Loads Infinite Yield for debugging",
+                Content = "Execute?",
+                Buttons = {
+                    {
+                        Title = "Confirm",
+                        Callback = function()
+                            print("Confirmed the dialog.")
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Cancelled the dialog.")
+                        end
+                    }
+                }
+            })
+        end
+    })
+
 local CurrentPlayers = Tabs.Utils:AddParagraph({
         Title = "",
         Content = ""
