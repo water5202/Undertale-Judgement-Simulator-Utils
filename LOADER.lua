@@ -243,9 +243,9 @@ game:GetService("Players").LocalPlayer.PlayerGui.BetterHealthBar.HealthGui.Visib
 end
 end)
 
-local HideHP = Tabs.Visuals:AddToggle("Shows the Errored Out text", {Title = "Error 404 Price (Item)", Default = nil })
+local ShowTrueValue = Tabs.Visuals:AddToggle("Shows the Errored Out text", {Title = "Error 404 Price (Item)", Default = nil })
 
-HideHP:OnChanged(function(Value)
+ShowTrueValue:OnChanged(function(Value)
 while Value == true do
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Items.Error404.Name.Text = "Error 404 [6666G]"
 end
