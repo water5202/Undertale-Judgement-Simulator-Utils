@@ -33,8 +33,8 @@ Window:SelectTab(1)
         Description = "Loads Infinite Yield for debugging",
         Callback = function()
             Window:Dialog({
-                Title = nil,
-                Content = "Execute?",
+                Title = "Execute?",
+                Content = nil,
                 Buttons = {
                     {
                         Title = "Confirm",
