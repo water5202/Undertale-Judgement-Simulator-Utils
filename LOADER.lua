@@ -8,6 +8,7 @@ local currentplayer
 local hp
 local maxhp
 local dc
+local g
 
 Fluent:Notify({
         Title = "UJS [Interface]",
@@ -74,6 +75,19 @@ local Wins = Tabs.Utils:AddParagraph({
         Title = "",
         Content = ""
 })
+
+local Gold = Tabs.Utils:AddParagraph({
+        Title = "",
+        Content = ""
+})
+
+spawn(function()
+while true do
+ws = game:GetService("Players").LocalPlayer.leaderstats.G
+Gold:SetTitle(g)
+task.wait(0.7)
+end
+end)
 
 spawn(function()
 while true do
@@ -155,28 +169,6 @@ Tabs.Utils:AddButton({
     end
 })
 
-local BypassShopInteract = Tabs.Utils:AddToggle("Instant Shop", {Title = "Instant Shop Interaction", Default = nil })
-
-BypassShopInteract:OnChanged(function(Value)
-if Value == true then
-workspace.Lobby:GetChildren()[90].h.ProximityPrompt.HoldDuration = 0
-Fluent:Notify({
-Title = "UJS [Interface]",
-Content = "Disabled Cooldown",
-SubContent = "",
-Duration = 5
-})
-else
-workspace.Lobby:GetChildren()[90].h.ProximityPrompt.HoldDuration = 0.5
-Fluent:Notify({
-Title = "UJS [Interface]",
-Content = "Enabled Cooldown",
-SubContent = "Ensure to walk away from the button and back to fix not being able to click!",
-Duration = 5
-})
-end
-end)
-
     Tabs.Utils:AddButton({
         Title = "Reset",
         Description = "Sets Health to 0",
@@ -200,3 +192,25 @@ end)
             })
         end
     })
+
+local BypassShopInteract = Tabs.Utils:AddToggle("Instant Shop", {Title = "Instant Shop Interaction", Default = nil })
+
+BypassShopInteract:OnChanged(function(Value)
+if Value == true then
+workspace.Lobby:GetChildren()[90].h.ProximityPrompt.HoldDuration = 0
+Fluent:Notify({
+Title = "UJS [Interface]",
+Content = "Disabled Cooldown",
+SubContent = "",
+Duration = 5
+})
+else
+workspace.Lobby:GetChildren()[90].h.ProximityPrompt.HoldDuration = 0.5
+Fluent:Notify({
+Title = "UJS [Interface]",
+Content = "Enabled Cooldown",
+SubContent = "Ensure to walk away from the button and back to fix not being able to click!",
+Duration = 5
+})
+end
+end)
