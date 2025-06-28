@@ -244,30 +244,4 @@ game:GetService("Players").LocalPlayer.PlayerGui.BetterHealthBar.HealthGui.Visib
 end
 end)
 
-local ShowTrueValue = Tabs.Visuals:AddToggle("Shows the Errored Out text", {Title = "Error 404 Price (Item)", Default = nil })
-local textLabel = player.PlayerGui:WaitForChild("FunnyCatShop")
-	:WaitForChild("Sh")
-	:WaitForChild("Items")
-	:WaitForChild("Error404")
-	:WaitForChild("Name")
-
-local loopThread = nil
-
-ShowTrueValue:OnChanged(function(Value)
-	if Value then
-		if loopThread == nil then
-			loopThread = coroutine.create(function()
-				while ShowTrueValue.Value do
-					textLabel.Text = "Error 404 [6666G]"
-					wait(0.7)
-					textLabel.Text = "$#@!%_ - %$#%"
-					wait(0.7)
-				end
-				loopThread = nil
-			end)
-			coroutine.resume(loopThread)
-		end
-	else
-	end
-end)
 
