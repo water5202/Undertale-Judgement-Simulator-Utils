@@ -258,13 +258,12 @@ ShowTrueValue:OnChanged(function(Value)
 				while ShowTrueValue.Value do
 					textLabel.Text = "Error 404 [6666G]"
 					wait(0.7)
-					textLabel.Text = "$#@!%_ - %$#%"
-					wait(0.7)
 				end
 				loopThread = nil
 			end)
 			coroutine.resume(loopThread)
 		end
 	else
+	     textLabel.Text = "$#@!%_ - %$#%"
 	end
 end)
