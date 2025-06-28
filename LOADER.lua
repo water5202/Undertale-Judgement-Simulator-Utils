@@ -215,3 +215,14 @@ Duration = 5
 })
 end
 end)
+
+local ToggleShop = Tabs.Utils:AddToggle("Instant Shop1", {Title = "Show Shop", Default = nil })
+
+ToggleShop:OnChanged(function(Value)
+if Value == true then
+game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Visible = true
+else
+game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Visible = false
+end
+end)
+
