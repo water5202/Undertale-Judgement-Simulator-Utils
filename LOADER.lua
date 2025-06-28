@@ -251,4 +251,5 @@ game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Items.Error404.
 end
 if Value == false then
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Items.Error404.Name.Text = "$#@!%_ - %$#%"
+end
 end)
