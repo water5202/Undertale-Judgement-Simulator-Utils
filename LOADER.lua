@@ -9,6 +9,7 @@ local hp
 local maxhp
 local dc
 local g
+local player = Players.LocalPlayer
 
 Fluent:Notify({
         Title = "UJS [Interface]",
@@ -244,10 +245,6 @@ end
 end)
 
 local ShowTrueValue = Tabs.Visuals:AddToggle("Shows the Errored Out text", {Title = "Error 404 Price (Item)", Default = nil })
-
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-
 local textLabel = player.PlayerGui:WaitForChild("FunnyCatShop")
 	:WaitForChild("Sh")
 	:WaitForChild("Items")
