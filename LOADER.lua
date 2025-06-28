@@ -33,3 +33,27 @@ spawn(function()
 currentplayer = #Players:GetPlayers()
 CurrentPlayers:SetTitle(currentplayer .. " │ players")
 end)
+
+    Tabs.Main:AddButton({
+        Title = "Goto Lobby",
+        Description = "Lobby Teleport",
+        Callback = function()
+            Window:Dialog({
+                Title = "Teleport to Lobby?",
+                Content = "This is a dialog",
+                Buttons = {
+                    {
+                        Title = "Confirm",
+                        Callback = function()
+                            print("Confirmed the dialog.")
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                        end
+                    }
+                }
+            })
+        end
+    })
