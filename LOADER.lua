@@ -70,6 +70,19 @@ local DodgeCount = Tabs.Utils:AddParagraph({
         Content = ""
 })
 
+local Wins = Tabs.Utils:AddParagraph({
+        Title = "",
+        Content = ""
+})
+
+spawn(function()
+while true do
+ws = game:GetService("Players").LocalPlayer.leaderstats.Wins
+Wins:SetTitle(ws)
+task.wait(0.7)
+end
+end)
+
 spawn(function()
 while true do
 dc = game:GetService("Players").LocalPlayer.PlayerGui.Main.Frame.DodgeCounter.Text
