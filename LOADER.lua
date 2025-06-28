@@ -110,7 +110,7 @@ spawn(function()
 while true do
 hp = game.Players.LocalPlayer.Character.Humanoid.Health
 maxhp = game.Players.LocalPlayer.Character.Humanoid.MaxHealth
-Health:SetTitle(hp .. "│" .. maxhp .. "Health")
+Health:SetTitle(hp .. "│" .. maxhp .. " Health")
 task.wait(0.7)
 end
 end)
