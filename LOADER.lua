@@ -243,5 +243,3 @@ game:GetService("Players").LocalPlayer.PlayerGui.BetterHealthBar.HealthGui.Visib
 game:GetService("Players").LocalPlayer.PlayerGui.BetterHealthBar.HealthGui.Visible = true
 end
 end)
-
-
