@@ -125,7 +125,7 @@ workspace.Lobby:GetChildren()[90].h.ProximityPrompt.HoldDuration = 0.5
 Fluent:Notify({
 Title = "UJS [Interface]",
 Content = "Enabled Cooldown",
-SubContent = "Make sure to walk away from the button and back to fix not being able to click",
+SubContent = "Ensure to walk away from the button and back to fix not being able to click!",
 Duration = 5
 })
 end
