@@ -84,7 +84,7 @@ local Gold = Tabs.Utils:AddParagraph({
 
 spawn(function()
 while true do
-ws = game:GetService("Players").LocalPlayer.leaderstats.G.Value
+g = game:GetService("Players").LocalPlayer.leaderstats.G.Value
 Gold:SetTitle(g)
 task.wait(0.7)
 end
