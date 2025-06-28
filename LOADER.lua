@@ -28,6 +28,7 @@ local Window = Fluent:CreateWindow({
 
 local Tabs = {
     Utils = Window:AddTab({ Title = "Utilites", Icon = "hammer" }),
+    Visuals = Window:AddTab({ Title = "Visual", Icon = "eye" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 Window:SelectTab(1)
