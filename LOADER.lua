@@ -1,4 +1,7 @@
 local Library = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local Players = game:GetService("Players")
+local currentplayer
+
 Fluent:Notify({
         Title = "UJS [Interface]",
         Content = "1.0",
@@ -21,4 +24,12 @@ local Tabs = {
 }
 Window:SelectTab(1)
 
+local CurrentPlayers = Tabs.Utils:AddParagraph({
+        Title = "",
+        Content = ""
+})
 
+spawn(function()
+currentplayer = #Players:GetPlayers()
+CurrentPlayers:SetTitle(currentplayer .. "players")
+end)
