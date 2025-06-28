@@ -45,11 +45,10 @@ local lobbytp = Tabs.Utils:AddButton({
                     {
                         Title = "Confirm",
                         Callback = function()
-                                                                local player = game.Players.LocalPlayer
-                                                                local hrp player.Character:FindFirstChild("HumanoidRootPart")
-                                                                if hrp and player then
-                                                                        hrp.CFrame = CFrame.new(64.5012894, 4.00011635, -124.729019, -0.00950993411, 0, 0.99995476, 0, 1, 0, -0.99995476, 0, -0.00950993411)
-                                                                end
+                        local player = game.Players.LocalPlayer
+                        if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                            local hrp = player.Character:FindFirstChild("HumanoidRootPart")
+                            hrp.CFrame = CFrame.new(64.5012894, 4.00011635, -124.729019, -0.00950993411, 0, 0.99995476, 0, 1, 0, -0.99995476, 0, -0.00950993411)
                         end
                     },
                     {
