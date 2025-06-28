@@ -65,15 +65,20 @@ local CurrentPlayers = Tabs.Utils:AddParagraph({
 })
 
 spawn(function()
+while true do
 hp = game.Players.LocalPlayer.Character.Humanoid.Health
 maxhp = game.Players.LocalPlayer.Character.Humanoid.MaxHealth
 Health:SetTitle(hp .. "│" .. maxhp)
+task.wait(0.7)
+end
 end)
 
 spawn(function()
+while true do
 currentplayer = #Players:GetPlayers()
 CurrentPlayers:SetTitle(currentplayer .. " │ Players")
 task.wait(0.7)
+end
 end)
 
 Tabs.Utils:AddButton({
