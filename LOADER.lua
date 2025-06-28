@@ -244,14 +244,19 @@ end
 end)
 
 local ShowTrueValue = Tabs.Visuals:AddToggle("Shows the Errored Out text", {Title = "Error 404 Price (Item)", Default = nil })
+local active = false
 
 ShowTrueValue:OnChanged(function(Value)
-while Value == true do
-game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Items.Error404.Name.Text = "Error 404 [6666G]"
-wait(0.7)
-end
+    active = Value
 
-if Value == false then
-game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Items.Error404.Name.Text = "$#@!%_ - %$#%"
-end
+    if Value then
+        coroutine.wrap(function()
+            while active do
+                game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Items.Error404.Name.Text = "Error 404 [6666G]"
+                wait(0.7)
+            end
+        end)()
+    else
+        game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Items.Error404.Name.Text = "$#@!%_ - %$#%"
+    end
 end)
