@@ -398,7 +398,7 @@ end)
 
 local ATPS = Tabs.TP:AddDropdown("ArenaTps", {
     Title = "Arena Teleport",
-    Description = "Dropdown description",
+    Description = nil,
     Values = {"HumanSpawn", "SansSpawn"},
     Multi = false,
     Default = nil,
