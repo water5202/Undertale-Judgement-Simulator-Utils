@@ -252,20 +252,24 @@ ShowTrueValue:OnChanged(function(Value)
 	end
 end)
 
-local EspToggle = Tab:AddToggle("ESPVAL", 
-{
+local EspToggle = Tabs.Visuals:AddToggle("ESPVAL", {
     Title = "ESP", 
     Description = "Shows all Players",
-    Default = false
+    Default = false,
     Callback = function(state)
-	if state then
-	    local Highlight = Instance.new("Hightlight")
-	    task.wait(0.7)
-	    Highlight.Parent = player.Character
-	else
-	    local delete = player.Character:FindFirstChild("Highlight")
-	    task.wait(0.7)
-	    delete:Destroy()
+        if state then
+            local highlight = Instance.new("Highlight")
+            highlight.Name = "ESPHighlight"
+            highlight.FillColor = Color3.fromRGB(255, 0, 0)
+            highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+            highlight.OutlineTransparency = 0
+            highlight.FillTransparency = 0.5
+            highlight.Parent = player.Character
+        else
+            local highlight = player.Character:FindFirstChild("ESPHighlight")
+            if highlight then
+                highlight:Destroy()
+            end
         end
-    end 
+    end
 })
