@@ -292,3 +292,36 @@ local EspToggle = Tabs.Visuals:AddToggle("ESPVAL", {
     end
 })
 
+local WeaponSelect = Tab:AddDropdown("ItemDrop", {
+    Title = "Weapon Select",
+    Description = nil,
+    Values = {"Stick", "Toy Knife", "Torn Notebook", "Burnt Pan", "Real Knife", "Jolly Dagger"},
+    Multi = false,
+    Default = nil,
+})
+
+WeaponSelect:OnChanged(function(Value)
+if Value == "Stick" then
+fireclickdetector(workspace.WeaponBlocks.Stick.ClickDetector)
+end
+
+if Value == "Toy Knife" then
+fireclickdetector(workspace.WeaponBlocks.ToyKnife.ClickDetector)
+end
+
+if Value == "Torn Notebook" then
+fireclickdetector(workspace.WeaponBlocks.TornNotebook.ClickDetector)
+end
+
+if Value == "Burnt Pan" then
+fireclickdetector(workspace.WeaponBlocks.BurntPan.ClickDetector)
+end
+
+if Value == "Real Knife" then
+fireclickdetector(workspace.WeaponBlocks.RealKnife.ClickDetector)
+end
+
+if Value == "Jolly Dagger" then
+fireclickdetector(workspace.WeaponBlocks.JollyDagger.ClickDetector)
+end
+end)
