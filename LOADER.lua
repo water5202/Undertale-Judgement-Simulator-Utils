@@ -171,7 +171,7 @@ Tabs.Utils:AddButton({
     end
 })
 
-    Tabs.Utils:AddButton({
+Tabs.Utils:AddButton({
         Title = "Reset",
         Description = "Sets Health to 0",
         Callback = function()
@@ -199,41 +199,13 @@ Tabs.Utils:AddButton({
                 }
             })
         end
-    })
-
-local BypassShopInteract = Tabs.Utils:AddToggle("Instant Shop", {Title = "Instant Shop Interaction", Default = nil })
-
-BypassShopInteract:OnChanged(function(Value)
-if Value == true then
-workspace.Lobby:GetChildren()[90].h.ProximityPrompt.HoldDuration = 0
-Fluent:Notify({
-Title = "UJS [Interface]",
-Content = "Disabled Cooldown",
-SubContent = "",
-Duration = 5
 })
-else
-workspace.Lobby:GetChildren()[90].h.ProximityPrompt.HoldDuration = 0.5
-Fluent:Notify({
-Title = "UJS [Interface]",
-Content = "Enabled Cooldown",
-SubContent = "Ensure to walk away from the button and back to fix not being able to click!",
-Duration = 5
-})
-end
-end)
 
 local ToggleShop = Tabs.Utils:AddToggle("Instant Shop1", {Title = "Show Shop", Default = nil })
 
 ToggleShop:OnChanged(function(Value)
 if Value == true then
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Visible = true
-Fluent:Notify({
-                                Title = "UJS [Interface]",
-                                Content = "Showing Shop",
-                                SubContent = "",
-                                Duration = 5
-})
 while Value == true do
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Balance.heya.Text = g
 task.wait(0.1)
@@ -241,12 +213,6 @@ end
 else
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Visible = false
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Balance.heya.Text = 0
-Fluent:Notify({
-                                Title = "UJS [Interface]",
-                                Content = "Stopped Showing Shop",
-                                SubContent = "",
-                                Duration = 5
-})
 end
 end)
 
@@ -255,20 +221,8 @@ local HideHP = Tabs.Visuals:AddToggle("Hides Health bar", {Title = "Hide Health 
 HideHP:OnChanged(function(Value)
 if Value == true then
 game:GetService("Players").LocalPlayer.PlayerGui.BetterHealthBar.HealthGui.Visible = false
-      Fluent:Notify({
-                                Title = "UJS [Interface]",
-                                Content = "Disabled Health Bar UI",
-                                SubContent = "",
-                                Duration = 5
-        })
 		else
 game:GetService("Players").LocalPlayer.PlayerGui.BetterHealthBar.HealthGui.Visible = true
-Fluent:Notify({
-                                Title = "UJS [Interface]",
-                                Content = "Enabled Health Bar UI",
-                                SubContent = "",
-                                Duration = 5
-})
 end
 end)
 
@@ -283,12 +237,6 @@ local loopThread = nil
 
 ShowTrueValue:OnChanged(function(Value)
 	if Value then
-	      Fluent:Notify({
-                                Title = "UJS [Interface]",
-                                Content = "Enabled True Value of Error 404",
-                                SubContent = "",
-                                Duration = 5
-                            })
 		if loopThread == nil then
 			loopThread = coroutine.create(function()
 				while ShowTrueValue.Value do
@@ -301,11 +249,23 @@ ShowTrueValue:OnChanged(function(Value)
 		end
 	else
 	     textLabel.Text = "$#@!%_ - %$#%"
-	           Fluent:Notify({
-                                Title = "UJS [Interface]",
-                                Content = "Disabled True Value of Error 404",
-                                SubContent = "",
-                                Duration = 5
-                })
 	end
 end)
+
+local EspToggle = Tab:AddToggle("ESPVAL", 
+{
+    Title = "ESP", 
+    Description = "Shows all Players",
+    Default = false
+    Callback = function(state)
+	if state then
+	    local Highlight = Instance.new("Hightlight")
+	    task.wait(0.7)
+	    Highlight.Parent = player.Character
+	else
+	    local delete = player.Character:FindFirstChild("Highlight")
+	    task.wait(0.7)
+	    delete:Destroy()
+        end
+    end 
+})
