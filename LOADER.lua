@@ -254,21 +254,28 @@ end)
 
 local EspToggle = Tabs.Visuals:AddToggle("ESPVAL", {
     Title = "ESP", 
-    Description = "Shows all Players",
+    Description = "Shows all Players except you",
     Default = false,
     Callback = function(state)
         if state then
-            local highlight = Instance.new("Highlight")
-            highlight.Name = "ESPHighlight"
-            highlight.FillColor = Color3.fromRGB(255, 0, 0)
-            highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
-            highlight.OutlineTransparency = 0
-            highlight.FillTransparency = 0.5
-            highlight.Parent = player.Character
+            for _, plr in pairs(Players:GetPlayers()) do
+                if plr ~= Players.LocalPlayer and plr.Character then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESPHighlight"
+                    highlight.FillTransparency = 1
+                    highlight.OutlineTransparency = 0
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.Parent = plr.Character
+                end
+            end
         else
-            local highlight = player.Character:FindFirstChild("ESPHighlight")
-            if highlight then
-                highlight:Destroy()
+            for _, plr in pairs(Players:GetPlayers()) do
+                if plr ~= Players.LocalPlayer and plr.Character then
+                    local highlight = plr.Character:FindFirstChild("ESPHighlight")
+                    if highlight then
+                        highlight:Destroy()
+                    end
+                end
             end
         end
     end
