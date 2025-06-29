@@ -324,4 +324,4 @@ end
 if Value == "Jolly Dagger" then
 fireclickdetector(workspace.WeaponBlocks.JollyDagger.ClickDetector)
 end
-end
+end)
