@@ -23,6 +23,13 @@ Fluent:Notify({
         Duration = 5
 })
 
+Fluent:Notify({
+        Title = "UJS [Interface]",
+        Content = "Press P to toggle the Interface",
+        SubContent = "",
+        Duration = 5
+})
+
 local Window = Fluent:CreateWindow({
     Title = "UJS [Water's Utils] │ " .. identifyexecutor(),
     TabWidth = 160,
