@@ -252,22 +252,33 @@ ShowTrueValue:OnChanged(function(Value)
 	end
 end)
 
+local Players = game:GetService("Players")
+local runHighlight = false
+
 local EspToggle = Tabs.Visuals:AddToggle("ESPVAL", {
-    Title = "ESP", 
+    Title = "ESP",
     Description = "Shows all Players except you",
     Default = false,
     Callback = function(state)
+        runHighlight = state
         if state then
-            for _, plr in pairs(Players:GetPlayers()) do
-                if plr ~= Players.LocalPlayer and plr.Character then
-                    local highlight = Instance.new("Highlight")
-                    highlight.Name = "ESPHighlight"
-                    highlight.FillTransparency = 1
-                    highlight.OutlineTransparency = 0
-                    highlight.OutlineColor = Color3.new(1, 1, 1)
-                    highlight.Parent = plr.Character
+            task.spawn(function()
+                while runHighlight do
+                    for _, plr in pairs(Players:GetPlayers()) do
+                        if plr ~= Players.LocalPlayer and plr.Character then
+                            if not plr.Character:FindFirstChild("ESPHighlight") then
+                                local highlight = Instance.new("Highlight")
+                                highlight.Name = "ESPHighlight"
+                                highlight.FillTransparency = 1
+                                highlight.OutlineTransparency = 0
+                                highlight.OutlineColor = Color3.new(1, 1, 1)
+                                highlight.Parent = plr.Character
+                            end
+                        end
+                    end
+                    task.wait(0.7)
                 end
-            end
+            end)
         else
             for _, plr in pairs(Players:GetPlayers()) do
                 if plr ~= Players.LocalPlayer and plr.Character then
@@ -280,3 +291,4 @@ local EspToggle = Tabs.Visuals:AddToggle("ESPVAL", {
         end
     end
 })
+
