@@ -125,6 +125,11 @@ task.wait(0.7)
 end
 end)
 
+local Section = Tab:AddSection("Section Name")
+Section:AddParagraph({
+    Title = "Main"
+})
+
 Tabs.TP:AddButton({
     Title = "Lobby TP",
     Description = "Lobby Teleport",
