@@ -292,25 +292,37 @@ local EspToggle = Tabs.Visuals:AddToggle("ESPVAL", {
     end
 })
 
-local WeaponSelect = Tabs.Utilities:AddDropdown("ItemDrop", {
+You said:
+local WeaponSelect = Tabs.Utils:AddDropdown("ItemDrop", {
     Title = "Weapon Select",
-    Description = "Select a weapon to auto-pick",
+    Description = nil,
     Values = {"Stick", "Toy Knife", "Torn Notebook", "Burnt Pan", "Real Knife", "Jolly Dagger"},
     Multi = false,
-    Default = "Stick",
-    Callback = function(Value)
-        if Value == "Stick" then
-            fireclickdetector(workspace.WeaponBlocks.Stick.ClickDetector)
-        elseif Value == "Toy Knife" then
-            fireclickdetector(workspace.WeaponBlocks.ToyKnife.ClickDetector)
-        elseif Value == "Torn Notebook" then
-            fireclickdetector(workspace.WeaponBlocks.TornNotebook.ClickDetector)
-        elseif Value == "Burnt Pan" then
-            fireclickdetector(workspace.WeaponBlocks.BurntPan.ClickDetector)
-        elseif Value == "Real Knife" then
-            fireclickdetector(workspace.WeaponBlocks.RealKnife.ClickDetector)
-        elseif Value == "Jolly Dagger" then
-            fireclickdetector(workspace.WeaponBlocks.JollyDagger.ClickDetector)
-        end
-    end
+    Default = nil,
 })
+
+WeaponSelect:OnChanged(function(Value)
+if Value == "Stick" then
+fireclickdetector(workspace.WeaponBlocks.Stick.ClickDetector)
+end
+
+if Value == "Toy Knife" then
+fireclickdetector(workspace.WeaponBlocks.ToyKnife.ClickDetector)
+end
+
+if Value == "Torn Notebook" then
+fireclickdetector(workspace.WeaponBlocks.TornNotebook.ClickDetector)
+end
+
+if Value == "Burnt Pan" then
+fireclickdetector(workspace.WeaponBlocks.BurntPan.ClickDetector)
+end
+
+if Value == "Real Knife" then
+fireclickdetector(workspace.WeaponBlocks.RealKnife.ClickDetector)
+end
+
+if Value == "Jolly Dagger" then
+fireclickdetector(workspace.WeaponBlocks.JollyDagger.ClickDetector)
+end
+end
