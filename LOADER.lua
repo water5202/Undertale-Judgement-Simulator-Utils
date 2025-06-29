@@ -443,3 +443,13 @@ if Value == "StainedApron" then
 fireclickdetector(workspace.ArmorBlocks.TheLocket.ClickDetector)
 end
 end)
+
+local UIKeybindToggle = Tabs.Settings:AddKeybind("UITOGGLEKEY", {
+    Title = "Toggle UI",
+    Description = "Changes the Keybind to toggle Interface",
+    Mode = "Toggle",
+    Default = "P",
+    ChangedCallback = function(key)
+        MinimizeKeybind = key
+    end
+})
