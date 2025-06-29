@@ -439,7 +439,7 @@ end
 if Value == "StainedApron" then
 fireclickdetector(workspace.ArmorBlocks.StainedApron.ClickDetector)
 end
-if Value == "StainedApron" then
+if Value == "TheLocket" then
 fireclickdetector(workspace.ArmorBlocks.TheLocket.ClickDetector)
 end
 end)
@@ -450,6 +450,6 @@ local UIKeybindToggle = Tabs.Settings:AddKeybind("UITOGGLEKEY", {
     Mode = "Toggle",
     Default = "P",
     ChangedCallback = function(key)
-        MinimizeKeybind = key
+        MinimizeKeybind = Enum.KeyCode.key
     end
 })
