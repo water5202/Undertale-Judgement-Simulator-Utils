@@ -392,44 +392,18 @@ fireclickdetector(workspace.WeaponBlocks.JollyDagger.ClickDetector)
 end
 end)
 
-Tabs.TP:AddButton({
-    Title = "Arena TP",
-    Description = "Arena Teleport",
-    Callback = function()
-        Window:Dialog({
-            Title = "Teleport to Arena?",
-            Content = nil,
-            Buttons = {
-                {
-                    Title = "Confirm",
-                    Callback = function()
-                        local player = game.Players.LocalPlayer
-                        if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-                            local hrp = player.Character:FindFirstChild("HumanoidRootPart")
-                            hrp.CFrame = workspace.Arena.TheArena.SansSpawn.CFrame
-                            task.wait(1)
-                            Fluent:Notify({
-                                Title = "UJS [Interface]",
-                                Content = "Teleported to Arena",
-                                SubContent = "",
-                                Duration = 5
-                            })
-                        else
-                            Fluent:Notify({
-                                Title = "UJS [Interface]",
-                                Content = "Failed to Teleport",
-                                SubContent = "",
-                                Duration = 5
-                            })
-                        end
-                    end
-                },
-                {
-                    Title = "Cancel",
-                    Callback = function()
-                    end
-                }
-            }
-        })
-    end
+local ATPS = Tab:AddDropdown("ArenaTps", {
+    Title = "Arena Teleport",
+    Description = "Dropdown description",
+    Values = {"HumanSpawn", "SansSpawn"},
+    Multi = false,
+    Default = nil,
 })
+
+ATPS:OnChanged(function(Value)
+    if Value == "HumanSpawn" then
+player.CFrame = workspace.Arena.TheArena.HumanSpawn.CFrame
+		elseif Value == "SansSpawn" then
+player.CFrame = workspace.Arena.TheArena.SansSpawn.CFrame
+		end
+end)
