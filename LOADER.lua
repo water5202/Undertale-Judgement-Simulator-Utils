@@ -406,7 +406,7 @@ Tabs.TP:AddButton({
                         local player = game.Players.LocalPlayer
                         if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
                             local hrp = player.Character:FindFirstChild("HumanoidRootPart")
-                            hrp.CFrame = workspace.Arena.TheArena.floor.CFrame
+                            hrp.CFrame = workspace.Arena.TheArena.SansSpawn.CFrame
                             task.wait(1)
                             Fluent:Notify({
                                 Title = "UJS [Interface]",
