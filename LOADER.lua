@@ -392,7 +392,7 @@ fireclickdetector(workspace.WeaponBlocks.JollyDagger.ClickDetector)
 end
 end)
 
-local ATPS = Tab:AddDropdown("ArenaTps", {
+local ATPS = Tabs.Utils:AddDropdown("ArenaTps", {
     Title = "Arena Teleport",
     Description = "Dropdown description",
     Values = {"HumanSpawn", "SansSpawn"},
