@@ -411,3 +411,11 @@ player.Character.HumanoidRootPart.CFrame = workspace.Arena.TheArena.HumanSpawn.C
 player.Character.HumanoidRootPart.CFrame = workspace.Arena.TheArena.SansSpawn.CFrame
 		end
 end)
+
+local AS = Tab:AddDropdown("ArmourSelect", {
+    Title = "Armour Select",
+    Description = nil,
+    Values = {"Bandage", "Cloudy Glasses", "Faded Ribbon", "OurBeloved", "SantaHat", "StainedApron", "TheLocket"},
+    Multi = false,
+    Default = 1,
+})
