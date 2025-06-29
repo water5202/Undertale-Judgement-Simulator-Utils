@@ -292,7 +292,7 @@ local EspToggle = Tabs.Visuals:AddToggle("ESPVAL", {
     end
 })
 
-local WeaponSelect = Tab:AddDropdown("ItemDrop", {
+local WeaponSelect = Tabs.Utilities:AddDropdown("ItemDrop", {
     Title = "Weapon Select",
     Description = nil,
     Values = {"Stick", "Toy Knife", "Torn Notebook", "Burnt Pan", "Real Knife", "Jolly Dagger"},
