@@ -19,7 +19,7 @@ local RunService = game:GetService("RunService")
 Fluent:Notify({
         Title = "UJS [Interface]",
         Content = "1.0",
-        SubContent = "made by water.5202 :D",
+        SubContent = "made by water.5202 :D, doubt i'll ever update this again",
         Duration = 5
 })
 
