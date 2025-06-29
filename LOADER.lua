@@ -450,6 +450,6 @@ local UIKeybindToggle = Tabs.Settings:AddKeybind("UITOGGLEKEY", {
     Mode = "Toggle",
     Default = "P",
     ChangedCallback = function(key)
-        MinimizeKeybind = Enum.KeyCode.key
+        MinimizeKeybind = key
     end
 })
