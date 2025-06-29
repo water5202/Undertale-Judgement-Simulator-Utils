@@ -412,10 +412,34 @@ player.Character.HumanoidRootPart.CFrame = workspace.Arena.TheArena.SansSpawn.CF
 		end
 end)
 
-local AS = Tab:AddDropdown("ArmourSelect", {
+local AS = Tabs.Utils:AddDropdown("ArmourSelect", {
     Title = "Armour Select",
     Description = nil,
     Values = {"Bandage", "Cloudy Glasses", "Faded Ribbon", "OurBeloved", "SantaHat", "StainedApron", "TheLocket"},
     Multi = false,
     Default = 1,
 })
+
+AS:OnChanged(function(Value)
+if Value == "Bandage" then
+fireclickdetector(workspace.ArmorBlocks.Bandage.ClickDetector)
+end
+if Value == "Cloudy Glasses" then
+fireclickdetector(workspace.ArmorBlocks.CloudyGlasses.ClickDetector)
+end
+if Value == "Faded Ribbon" then
+fireclickdetector(workspace.ArmorBlocks.FadedRibbon.ClickDetector)
+end
+if Value == "OurBeloved" then
+fireclickdetector(workspace.ArmorBlocks.OurBeloved.ClickDetector)
+end
+if Value == "SantaHat" then
+fireclickdetector(workspace.ArmorBlocks.SantaHat.ClickDetector)
+end
+if Value == "StainedApron" then
+fireclickdetector(workspace.ArmorBlocks.StainedApron.ClickDetector)
+end
+if Value == "StainedApron" then
+fireclickdetector(workspace.ArmorBlocks.TheLocket.ClickDetector)
+end
+end)
