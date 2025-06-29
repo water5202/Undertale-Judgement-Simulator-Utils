@@ -10,6 +10,7 @@ local maxhp
 local dc
 local g
 local player = Players.LocalPlayer
+local RunService = game:GetService("RunService")
 
 Fluent:Notify({
         Title = "UJS [Interface]",
@@ -330,6 +331,28 @@ local EspToggle = Tabs.Visuals:AddToggle("ESPVAL", {
                         highlight:Destroy()
                     end
                 end
+            end
+        end
+    end
+})
+
+local attackBypassConnection
+local AttackBypass = Tabs.Utils:AddToggle("BypassAttack", 
+{
+    Title = "Bypass Attacks", 
+    Description = "Blatant...",
+    Default = false,
+    Callback = function(state)
+        if state then
+            attackBypassConnection = RunService.Heartbeat:Connect(function()
+                for _, attack in pairs(workspace.Attacks:GetChildren()) do
+                    attack:Destroy()
+                end
+            end)
+        else
+            if attackBypassConnection then
+                attackBypassConnection:Disconnect()
+                attackBypassConnection = nil
             end
         end
     end
