@@ -393,11 +393,11 @@ end
 end)
 
 Tabs.TP:AddButton({
-    Title = "Shop TP",
-    Description = "Shop Teleport",
+    Title = "Arena TP",
+    Description = "Arena Teleport",
     Callback = function()
         Window:Dialog({
-            Title = "Teleport to Shop?",
+            Title = "Teleport to Arena?",
             Content = nil,
             Buttons = {
                 {
@@ -410,7 +410,7 @@ Tabs.TP:AddButton({
                             task.wait(1)
                             Fluent:Notify({
                                 Title = "UJS [Interface]",
-                                Content = "Teleported to Shop",
+                                Content = "Teleported to Arena",
                                 SubContent = "",
                                 Duration = 5
                             })
