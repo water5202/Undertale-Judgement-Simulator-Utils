@@ -172,6 +172,48 @@ Tabs.TP:AddButton({
     end
 })
 
+Tabs.TP:AddButton({
+    Title = "Shop TP",
+    Description = "Shop Teleport",
+    Callback = function()
+        Window:Dialog({
+            Title = "Teleport to Shop?",
+            Content = nil,
+            Buttons = {
+                {
+                    Title = "Confirm",
+                    Callback = function()
+                        local player = game.Players.LocalPlayer
+                        if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                            local hrp = player.Character:FindFirstChild("HumanoidRootPart")
+                            hrp.CFrame = CFrame.new(30.0301647, 4.03023005, -181.442856, 0.999979258, 1.0798891e-07, 0.00644321367, -1.08192033e-07, 1, 3.1176981e-08, -0.00644321367, -3.18734372e-08, 0.999979258)
+                            task.wait(1)
+                            Fluent:Notify({
+                                Title = "UJS [Interface]",
+                                Content = "Teleported to Shop",
+                                SubContent = "",
+                                Duration = 5
+                            })
+                        else
+                            Fluent:Notify({
+                                Title = "UJS [Interface]",
+                                Content = "Failed to Teleport",
+                                SubContent = "",
+                                Duration = 5
+                            })
+                        end
+                    end
+                },
+                {
+                    Title = "Cancel",
+                    Callback = function()
+                    end
+                }
+            }
+        })
+    end
+})
+
 Tabs.Utils:AddButton({
         Title = "Reset",
         Description = "Sets Health to 0",
