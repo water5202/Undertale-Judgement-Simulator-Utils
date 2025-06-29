@@ -305,7 +305,7 @@ local runHighlight = false
 
 local EspToggle = Tabs.Visuals:AddToggle("ESPVAL", {
     Title = "ESP",
-    Description = "Shows all Players except you",
+    Description = "Shows all Players",
     Default = false,
     Callback = function(state)
         runHighlight = state
