@@ -396,7 +396,7 @@ fireclickdetector(workspace.WeaponBlocks.JollyDagger.ClickDetector)
 end
 end)
 
-local ATPS = Tabs.Utils:AddDropdown("ArenaTps", {
+local ATPS = Tabs.TP:AddDropdown("ArenaTps", {
     Title = "Arena Teleport",
     Description = "Dropdown description",
     Values = {"HumanSpawn", "SansSpawn"},
@@ -406,8 +406,8 @@ local ATPS = Tabs.Utils:AddDropdown("ArenaTps", {
 
 ATPS:OnChanged(function(Value)
     if Value == "HumanSpawn" then
-player.CFrame = workspace.Arena.TheArena.HumanSpawn.CFrame
+player.Character.HumanoidRootPart.CFrame = workspace.Arena.TheArena.HumanSpawn.CFrame
 		elseif Value == "SansSpawn" then
-player.CFrame = workspace.Arena.TheArena.SansSpawn.CFrame
+player.Character.HumanoidRootPart.CFrame = workspace.Arena.TheArena.SansSpawn.CFrame
 		end
 end)
