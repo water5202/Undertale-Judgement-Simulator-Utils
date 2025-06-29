@@ -30,6 +30,7 @@ local Window = Fluent:CreateWindow({
 local Tabs = {
     Utils = Window:AddTab({ Title = "Utilites", Icon = "hammer" }),
     Visuals = Window:AddTab({ Title = "Visual", Icon = "eye" }),
+    TP = Window:AddTab({ Title = "Teleports", Icon = "box" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 Window:SelectTab(1)
@@ -124,7 +125,7 @@ task.wait(0.7)
 end
 end)
 
-Tabs.Utils:AddButton({
+Tabs.TP:AddButton({
     Title = "Lobby TP",
     Description = "Lobby Teleport",
     Callback = function()
