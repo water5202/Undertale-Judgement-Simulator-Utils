@@ -417,7 +417,7 @@ local AS = Tabs.Utils:AddDropdown("ArmourSelect", {
     Description = nil,
     Values = {"Bandage", "Cloudy Glasses", "Faded Ribbon", "OurBeloved", "SantaHat", "StainedApron", "TheLocket"},
     Multi = false,
-    Default = 1,
+    Default = nil,
 })
 
 AS:OnChanged(function(Value)
