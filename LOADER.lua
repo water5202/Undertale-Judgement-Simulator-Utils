@@ -1,3 +1,7 @@
+if game.PlaceId ~= 6155695903 then
+	return
+end
+
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
