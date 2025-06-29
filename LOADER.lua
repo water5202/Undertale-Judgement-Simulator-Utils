@@ -183,6 +183,12 @@ Tabs.Utils:AddButton({
                         Title = "Confirm",
                         Callback = function()
                             game.Players.LocalPlayer.Character.Humanoid.Health = 0
+			Fluent:Notify({
+                                Title = "UJS [Interface]",
+                                Content = "Set Health to 0",
+                                SubContent = "",
+                                Duration = 5
+                            })
                         end
                     },
                     {
@@ -222,6 +228,12 @@ local ToggleShop = Tabs.Utils:AddToggle("Instant Shop1", {Title = "Show Shop", D
 ToggleShop:OnChanged(function(Value)
 if Value == true then
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Visible = true
+Fluent:Notify({
+                                Title = "UJS [Interface]",
+                                Content = "Showing Shop",
+                                SubContent = "",
+                                Duration = 5
+})
 while Value == true do
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Balance.heya.Text = g
 task.wait(0.1)
@@ -229,6 +241,12 @@ end
 else
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Visible = false
 game:GetService("Players").LocalPlayer.PlayerGui.FunnyCatShop.Sh.Balance.heya.Text = 0
+Fluent:Notify({
+                                Title = "UJS [Interface]",
+                                Content = "Stopped Showing Shop",
+                                SubContent = "",
+                                Duration = 5
+})
 end
 end)
 
@@ -237,8 +255,20 @@ local HideHP = Tabs.Visuals:AddToggle("Hides Health bar", {Title = "Hide Health 
 HideHP:OnChanged(function(Value)
 if Value == true then
 game:GetService("Players").LocalPlayer.PlayerGui.BetterHealthBar.HealthGui.Visible = false
+      Fluent:Notify({
+                                Title = "UJS [Interface]",
+                                Content = "Disabled Health Bar UI",
+                                SubContent = "",
+                                Duration = 5
+        })
 		else
 game:GetService("Players").LocalPlayer.PlayerGui.BetterHealthBar.HealthGui.Visible = true
+Fluent:Notify({
+                                Title = "UJS [Interface]",
+                                Content = "Enabled Health Bar UI",
+                                SubContent = "",
+                                Duration = 5
+})
 end
 end)
 
@@ -253,6 +283,12 @@ local loopThread = nil
 
 ShowTrueValue:OnChanged(function(Value)
 	if Value then
+	      Fluent:Notify({
+                                Title = "UJS [Interface]",
+                                Content = "Enabled True Value of Error 404",
+                                SubContent = "",
+                                Duration = 5
+                            })
 		if loopThread == nil then
 			loopThread = coroutine.create(function()
 				while ShowTrueValue.Value do
@@ -265,5 +301,11 @@ ShowTrueValue:OnChanged(function(Value)
 		end
 	else
 	     textLabel.Text = "$#@!%_ - %$#%"
+	           Fluent:Notify({
+                                Title = "UJS [Interface]",
+                                Content = "Disabled True Value of Error 404",
+                                SubContent = "",
+                                Duration = 5
+                })
 	end
 end)
